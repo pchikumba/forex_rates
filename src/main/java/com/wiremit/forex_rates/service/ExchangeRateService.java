@@ -8,10 +8,10 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 public interface ExchangeRateService {
-    List<ExchangeRate> getCurrentRates();
-    ExchangeRate getRateByBaseCurrency(String baseCurrency);
-    ExchangeRate getRateByCurrency(String baseCurrency, String targetCurrency);
+    List<CurrentRatesDTO> getRateByBaseCurrency(String baseCurrency);
+
     List<ExchangeRate> getHistoricalRates(LocalDateTime from, LocalDateTime to);
-    public List<CurrentRatesDTO> getBankStyleRates();
+
+    List<CurrentRatesDTO> getBankStyleRates();
 
 }

@@ -17,7 +17,7 @@ public class CurrencyRateCron {
         this.currencyService = currencyService;
     }
 
-    @Scheduled(fixedRate = 500000)
+    //@Scheduled(fixedRate = 3600000)
     public void pullCurrencyRate() throws InterruptedException {
         var currencies = currencyService.getCurrencies();
         if (currencies.isEmpty()) {

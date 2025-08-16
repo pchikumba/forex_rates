@@ -24,9 +24,8 @@ public class ExchangeRateController {
     }
 
     @GetMapping("/rates/{currency}")
-    public ResponseEntity<ExchangeRate> getRateByCurrency(@PathVariable String baseCurrency
-            ,@PathVariable String targetCurrency) {
-        return ResponseEntity.ok(exchangeRateService.getRateByCurrency(baseCurrency, targetCurrency));
+    public ResponseEntity<?> getRateByCurrency(@PathVariable String currency) {
+        return ResponseEntity.ok(exchangeRateService.getRateByBaseCurrency(currency));
     }
 
     @GetMapping("/historical/rates")
